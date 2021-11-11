@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -6,6 +6,8 @@ export const config = {
   snapshotSubgraph:
     process.env.SNAPSHOT_SUBGRAPH_URL ??
     'https://hub.snapshot.org/graphql',
+  telegramAccessCode: process.env.TG_BOT_ACCESSCODE,
+  telegramChannelId: process.env.TG_CHANNEL_ID,
   spaceId: process.env.spaceId ?? 'piedao.eth',  
   twitterEnabled: process.env.TWITTER_ENABLED === 'true',
   twitterAppKey: process.env.TWITTER_APP_KEY ?? '',
