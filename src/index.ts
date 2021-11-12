@@ -8,4 +8,4 @@ async function main() {
     await notifyTelegram(res);
 }
 
-cron.schedule(Every.day, main);
+cron.schedule(Every.twelveHours, main);
