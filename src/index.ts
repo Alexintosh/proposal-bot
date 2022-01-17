@@ -7,7 +7,11 @@ import { notifyTelegram } from './handlers/telegram';
 async function main() {
     let now = moment().unix();
     const res = await getLastOpenProposals(now);
-    await notifyTelegram(res);
+    if(res.length > 0) {
+        await notifyTelegram(res);
+    } else {
+        console.log('No proposals')
+    }
 }
 
 cron.schedule(Every.twelveHours, main);
